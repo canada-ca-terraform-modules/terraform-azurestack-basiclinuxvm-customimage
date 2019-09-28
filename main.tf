@@ -89,7 +89,7 @@ resource azurestack_virtual_machine VM {
     custom_data    = "${var.custom_data}"
   }
   storage_image_reference {
-    id = "${data.azurerm_image.custom.id}"
+    id = "${var.custom_image_id}"
   }
   dynamic "plan" {
     for_each = "${local.plan}"

@@ -31,8 +31,7 @@ module "dockerweb" {
   nic_vnetName                      = "some-vnet-name"
   nic_vnet_resource_group_name      = "some-vnet-resourcegroup-name"
   vm_size                           = "Standard_D2_v3"
-  custom_image_resource_group_name  = "someRGName"
-  custom_image_name                 = "someImageName"
+  custom_image_id                 = "someImageId"
 }
 ```
 
@@ -47,8 +46,7 @@ module "dockerweb" {
 | nic_subnetName                     | string | yes      | Name of the subnet to which the VM NIC will connect to                                                                                                                                                      |
 | nic_vnetName                       | string | yes      | Name of the VNET the subnet is part of                                                                                                                                                                      |
 | nic_vnet_resource_group_name       | string | yes      | Name of the resourcegroup containing the VNET                                                                                                                                                               |
-| custom_image_resource_group_name   | string | yes      | Name of the resource containing the custom image                                                                                                                                                            |
-| custom_image_name                  | string | yes      | Name of the custom image                                                                                                                                                                                    |
+| custom_image_name                  | string | yes      | ID of the custom image                                                                                                                                                                                    |
 | vm_size                            | string | yes      | Specifies the desired size of the Virtual Machine. Eg: Standard_F4                                                                                                                                          |
 | location                           | string | no       | Azure location for resources. Default: canadacentral                                                                                                                                                        |
 | tags                               | object | no       | Object containing a tag values - [tags pairs](#tag-object)                                                                                                                                                  |
@@ -213,4 +211,4 @@ plan = {
 
 | Date     | Release    | Change                        |
 | -------- | ---------- | ----------------------------- |
-| 20190930 | 20190930.1 | 1st module release            |
+| 20190928 | 20190928.1 | 1st module release            |

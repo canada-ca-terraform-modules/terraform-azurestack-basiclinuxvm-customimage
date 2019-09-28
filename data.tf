@@ -7,9 +7,3 @@ data "azurestack_subnet" "subnet" {
 data "azurestack_resource_group" "resourceGroup" {
   name = "${var.resource_group_name}"
 }
-
-# we assume that this Custom Image already exists
-data "azurerm_image" "custom" {
-  name                = "${var.custom_image_name}"
-  resource_group_name = "${var.custom_image_resource_group_name}"
-}

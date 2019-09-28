@@ -71,12 +71,8 @@ variable "public_ip" {
   default     = false
 }
 
-variable "custom_image_resource_group_name" {
-  description = "The name of the Resource Group in which the Custom Image exists."
-}
-
-variable "custom_image_name" {
-  description = "The name of the Custom Image to provision this Virtual Machine from."
+variable "custom_image_id" {
+  description = "The id of the Custom Image to provision this Virtual Machine from."
 }
 
 variable "plan" {
