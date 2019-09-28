@@ -1,0 +1,10 @@
+# This local is used to create a simple array with a single plan object if a plan is specified as an optional variable
+
+locals {
+  plan            = var.plan == null ? [] : [var.plan]
+  ssh_key         = var.ssh_key == null ? [] : [var.ssh_key]
+  boot_diagnostic = var.boot_diagnostic ? ["1"] : []
+  unique          = "${substr(sha1("${data.azurestack_resource_group.resourceGroup.id}"), 0, 8)}"
+  fixname         = "${replace("${var.name}", "-", "")}"
+  storageName     = "${lower("${local.fixname}diag${local.unique}")}"
+}
